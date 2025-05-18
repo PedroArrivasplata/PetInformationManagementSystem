@@ -6,7 +6,7 @@ body {
 }
 
 .hero {
-  background: url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+  background: url('../images/perro_fondo_azul.avif') no-repeat center center/cover;
   height: 100vh;
   color: white;
 }
