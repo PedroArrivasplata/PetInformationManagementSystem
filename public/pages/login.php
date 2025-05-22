@@ -1,6 +1,42 @@
 <?php
+$mensaje = '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $correo = $_POST['username'] ?? '';
+    $clave = $_POST['password'] ?? '';
 
+    if (!empty($correo) && !empty($clave)) {
+        $ch = curl_init('http://localhost/repo_Oficial/PetInformationManagementSystem/app/controllers/api_login.php'); // Ajusta esta URL según tu entorno
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(['correo' => $correo, 'clave' => $clave]));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+        $response = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        if ($httpCode === 200) {
+            $usuario = json_decode($response, true);
+            $usuario= $usuario["usuario"];
+            // Redirección según tipo de usuario
+            if ($usuario['tipo_usuario'] === 'recepcionista') {
+                header('Location: ../pages/oficial.html');
+                exit;
+            } elseif ($usuario['tipo_usuario'] === 'veterinario') {
+                header('Location: ../cliente/inicio.php');
+                exit;
+            } else {
+                header('Location: ../usuario/inicio.php');
+                exit;
+            }
+        } else {
+            $resp = json_decode($response, true);
+            $mensaje = $resp['error'] ?? 'usuario o contraseña incorrectos';
+        }
+    } else {
+        $mensaje = 'Debe ingresar usuario y contraseña.';
+    }
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -25,6 +61,14 @@
 </head>
 
 <body class="login-body">
+  <?php if (!empty($mensaje)): ?>
+  <div class="container mt-4">
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <?php echo htmlspecialchars($mensaje); ?>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+    </div>
+  </div>
+<?php endif; ?>
   <!-- Video de fondo -->
   <video autoplay muted loop id="background-video">
     <source src="../images/happy_dog.png" type="img">
@@ -44,8 +88,8 @@
       <h1 class="text-center fs-2 fw-bold mb-2">Bienvenidos</h1>
       <h2 class="text-center fs-4 fw-bold mb-4 text-primary">a Medical Vice</h2>
       
-      <form>
-        <!-- Campo de usuario -->
+      <form method="post" action="">
+        <!-- Campo de usuario --> 
         <div class="input-group mb-3">
           <span class="input-group-text login-input-icon">
             <i class="bi bi-person-fill"></i>

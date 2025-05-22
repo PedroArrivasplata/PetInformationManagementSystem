@@ -27,7 +27,7 @@ switch ($method) {
 
           switch ($resultado['estado']) {
               case 'ok':
-                  http_response_code(404);
+                  http_response_code(200);
                   echo json_encode($resultado);
                   break;
 
