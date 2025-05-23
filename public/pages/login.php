@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 header('Location: ../pages/oficial.html');
                 exit;
             } elseif ($usuario['tipo_usuario'] === 'veterinario') {
-                header('Location: ../cliente/inicio.php');
+                header('Location: ../pages/1_inicio.php');
                 exit;
             } else {
                 header('Location: ../usuario/inicio.php');
