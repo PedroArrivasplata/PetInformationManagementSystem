@@ -1,11 +1,11 @@
 <?php
 $mensaje = '';
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $correo = $_POST['username'] ?? '';
-    $clave = $_POST['password'] ?? '';
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    $correo = $_GET['username'] ?? '';
+    $clave = $_GET['password'] ?? '';
 
     if (!empty($correo) && !empty($clave)) {
-        $ch = curl_init('http://localhost/repo_Oficial/PetInformationManagementSystem/app/controllers/api_login.php'); // Ajusta esta URL según tu entorno
+        $ch = curl_init('http://localhost/repo_Oficial/PetInformationManagementSystem/app/controllers/api_login.php'); 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(['correo' => $correo, 'clave' => $clave]));
         curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <h1 class="text-center fs-2 fw-bold mb-2">Bienvenidos</h1>
       <h2 class="text-center fs-4 fw-bold mb-4 text-primary">a Medical Vice</h2>
       
-      <form method="post" action="">
+      <form method="GET" action="">
         <!-- Campo de usuario --> 
         <div class="input-group mb-3">
           <span class="input-group-text login-input-icon">
@@ -107,6 +107,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <!-- Botón de inicio de sesión -->
         <button type="submit" class="btn login-btn w-100 fw-semibold shadow-sm mb-3">Iniciar Sesión</button>
+
+        <!-- Enlace para registro -->
+        <div class="text-center">
+          <a href="../pages/registro.php" class="text-decoration-none">¿No tienes cuenta? Regístrate aquí</a>
       </form>
 
     </main>

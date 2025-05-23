@@ -17,7 +17,6 @@ function obtenerUsuarioPorCorreoYClave($correo, $clave) {
         return ['estado' => 'correo_no_encontrado'];
     }
 
-    // Verificamos contraseña (se asume en texto plano)
     if ($clave === ($usuario['password'] ?? '')) {
         // Eliminamos la contraseña antes de devolver
         unset($usuario['password']);
@@ -29,7 +28,42 @@ function obtenerUsuarioPorCorreoYClave($correo, $clave) {
     }
 }
 
+//Kiara hizo esto
+function registrarNuevoUsuario($dni, $nombres, $apellidos, $correo, $clave, $tipo_usuario_id, $estado_logico_id) {
+    $pdo = conectar(); 
+    $sql = "INSERT INTO usuario (
+                dni,
+                nombres,
+                apellidos,
+                correo_electronico,
+                password,
+                tipo_usuario_id_tipo_usuario,
+                estado_logico_id_estado_logico
+            ) VALUES (
+                :dni, :nombres, :apellidos, :correo, :password, :tipo_usuario_id, :estado_logico_id
+            )";
 
+    $stmt = $pdo->prepare($sql); 
+
+    try {
+        $stmt->execute([
+            ':dni' => $dni,
+            ':nombres' => $nombres,
+            ':apellidos' => $apellidos,
+            ':correo' => $correo,
+            ':password' => $clave,
+            ':tipo_usuario_id' => $tipo_usuario_id,
+            ':estado_logico_id' => $estado_logico_id
+        ]);
+        return ['estado' => 'ok', 'mensaje' => 'Usuario registrado con éxito'];
+    } catch (PDOException $e) {
+        // Manejo de errores de clave foránea o duplicados
+        if ($e->getCode() == 23000) {
+            return ['estado' => 'error', 'mensaje' => 'El correo o el DNI ya están registrados'];
+        }
+        return ['estado' => 'error', 'mensaje' => 'Error al registrar usuario: ' . $e->getMessage()];
+    }
+}
 
 
 ?>
