@@ -11,74 +11,44 @@ $id = end($uri); // Se espera que el ID del usuario venga al final de la URI, ej
 switch ($method) {
 
     case 'GET':
+        break;
+
+    case 'POST':
         if (!isset($input['correo']) || !isset($input['clave'])) {
         http_response_code(400);
         echo json_encode(["error" => "Faltan parámetros: correo y clave requeridos."]);
         }
         else{  
-          $correo = $input['correo'];
-          $clave = $input['clave'];
+            $correo = $input['correo'];
+            $clave = $input['clave'];
 
-          $resultado = obtenerUsuarioPorCorreoYClave($correo, $clave);
+            $resultado = obtenerUsuarioPorCorreoYClave($correo, $clave);
 
-          switch ($resultado['estado']) {
-              case 'ok':
-                  http_response_code(200);
-                  echo json_encode($resultado);
-                  break;
+            switch ($resultado['estado']) {
+                case 'ok':
+                    http_response_code(200);
+                    echo json_encode($resultado);
+                    break;
 
-              case 'correo_no_encontrado':
-                  http_response_code(404);
-                  echo json_encode(["error" => "Correo no registrado."]);
-                  break;
+                case 'correo_no_encontrado':
+                    http_response_code(404);
+                    echo json_encode(["error" => "Correo no registrado."]);
+                    break;
 
-              case 'clave_incorrecta':
-                  http_response_code(401);
-                  echo json_encode(["error" => "Contraseña incorrecta."]);
-                  break;
+                case 'clave_incorrecta':
+                    http_response_code(401);
+                    echo json_encode(["error" => "Contraseña incorrecta."]);
+                    break;
 
-              default:
-                  http_response_code(500);
-                  echo json_encode(["error" => "Error inesperado al procesar la solicitud."]);
-                  break;
-          }
-        
-      }
-        break;
-        
-
-    case 'POST':
-                // Validar que todos los campos necesarios estén presentes
-        $campos_requeridos = ['dni', 'nombres', 'apellidos', 'correo', 'clave', 'tipo_usuario_id', 'estado_logico_id'];
-        foreach ($campos_requeridos as $campo) {
-            if (!isset($input[$campo])) {
-                http_response_code(400);
-                echo json_encode(["error" => "Falta el campo requerido: $campo"]);
-                exit;
+                default:
+                    http_response_code(500);
+                    echo json_encode(["error" => "Error inesperado al procesar la solicitud."]);
+                    break;
             }
+            
         }
-
-        // Extraer los datos del input
-        $dni = $input['dni'];
-        $nombres = $input['nombres'];
-        $apellidos = $input['apellidos'];
-        $correo = $input['correo'];
-        $clave = $input['clave'];
-        $tipo_usuario_id = $input['tipo_usuario_id'];
-        $estado_logico_id = $input['estado_logico_id'];
-
-        // Llamar a la función de registro
-        $resultado = registrarNuevoUsuario($dni, $nombres, $apellidos, $correo, $clave, $tipo_usuario_id, $estado_logico_id);
-
-        if ($resultado['estado'] === 'ok') {
-            http_response_code(201); // creado
-            echo json_encode(["mensaje" => $resultado['mensaje']]);
-        } else {
-            http_response_code(400); // solicitud incorrecta
-            echo json_encode(["error" => $resultado['mensaje']]);
-        }
-
         break;
+        
 
     case 'PUT':
         // Aquí se implementará la lógica para actualizar un usuario

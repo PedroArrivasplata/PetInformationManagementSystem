@@ -1,11 +1,11 @@
 <?php
 $mensaje = '';
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $correo = $_GET['username'] ?? '';
-    $clave = $_GET['password'] ?? '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $correo = $_POST['username'] ?? '';
+    $clave = $_POST['password'] ?? '';
 
     if (!empty($correo) && !empty($clave)) {
-        $ch = curl_init('http://localhost/repo_Oficial/PetInformationManagementSystem/app/controllers/api_login.php'); 
+        $ch = curl_init('http://localhost/repo_Oficial/PetInformationManagementSystem/app/controllers/api_login.php'); // Ajusta esta URL según tu entorno
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(['correo' => $correo, 'clave' => $clave]));
         curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 header('Location: ../pages/oficial.html');
                 exit;
             } elseif ($usuario['tipo_usuario'] === 'veterinario') {
-                header('Location: ../cliente/inicio.php');
+                header('Location: ../pages/1_inicio.php');
                 exit;
             } else {
                 header('Location: ../usuario/inicio.php');
@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
       <h1 class="text-center fs-2 fw-bold mb-2">Bienvenidos</h1>
       <h2 class="text-center fs-4 fw-bold mb-4 text-primary">a Medical Vice</h2>
       
-      <form method="GET" action="">
+      <form method="post" action="">
         <!-- Campo de usuario --> 
         <div class="input-group mb-3">
           <span class="input-group-text login-input-icon">
@@ -105,14 +105,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
           <input type="password" class="form-control" placeholder="Ingresa tu contraseña" name="password" required />
         </div>
 
+        <!-- Recordarme y enlace de contraseña olvidada -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="rememberMe" />
+            <label class="form-check-label" for="rememberMe">Recordarme</label>
+          </div>
+          <a href="#" class="text-decoration-none login-link ms-2">¿Olvidaste tu contraseña?</a>
+        </div>
+
         <!-- Botón de inicio de sesión -->
         <button type="submit" class="btn login-btn w-100 fw-semibold shadow-sm mb-3">Iniciar Sesión</button>
-
-        <!-- Enlace para registro -->
-        <div class="text-center">
-          <a href="../pages/registro.php" class="text-decoration-none">¿No tienes cuenta? Regístrate aquí</a>
       </form>
 
+      <!-- Enlace para registrarse -->
+      <div class="text-center mb-2">
+        <span>¿No tienes cuenta?</span>
+        <a href="#" class="text-decoration-none login-link fw-semibold">Regístrate</a>
+      </div>
+
+      <!-- Separador -->
+      <div class="text-center position-relative my-3">
+        <hr class="my-1" />
+        <span class="position-absolute top-50 start-50 translate-middle bg-white px-3">o</span>
+      </div>
+
+      <!-- Botón para continuar con Google -->
+      <button class="btn d-flex align-items-center justify-content-center gap-2 border shadow-sm w-100">
+        <i class="bi bi-google text-danger" style="font-size: 1.6rem;"></i>
+        <span class="fw-semibold text-secondary">Continuar con Google</span>
+      </button>
     </main>
 
     <!-- Imagen derecha (solo en pantallas medianas y grandes) -->
