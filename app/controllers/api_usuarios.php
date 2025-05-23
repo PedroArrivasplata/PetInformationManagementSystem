@@ -5,8 +5,6 @@ header("Content-Type: application/json; charset=UTF-8");
 
 $method = $_SERVER['REQUEST_METHOD'];
 $input = json_decode(file_get_contents("php://input"), true);
-$uri = explode("/", trim($_SERVER['REQUEST_URI'], "/"));
-$id = end($uri); // Se espera que el ID del usuario venga al final de la URI, ej. /api/usuarios/123
 
 switch ($method) {
 
