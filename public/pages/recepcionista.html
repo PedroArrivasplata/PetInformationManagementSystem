@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Vice - Panel Recepción</title>
+    <link rel="stylesheet" href="styles_local.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="vet-dashboard">
+        <div class="vet-sidebar">
+            <div class="vet-sidebar-header">
+                <img src="../images/happy_dog.png" alt="Medical Vice Logo">
+                <h3>Medical Vice</h3>
+                <p>Panel Recepcionista</p>
+            </div>
+            <ul class="vet-sidebar-nav">
+                <li><a href="1_inicio_recepcion.html" class="active"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="2_agendar_cita.html"><i class="fas fa-calendar-plus"></i> Agendar Cita</a></li>
+                <li><a href="3_lista_citas.html"><i class="fas fa-list"></i> Lista de Citas</a></li>
+                <li><a href="4_registro_pacientes.html"><i class="fas fa-user-plus"></i> Registro de Pacientes</a></li>
+                <li><a href="5_contacto_cliente.html"><i class="fas fa-phone"></i> Contacto con Clientes</a></li>
+            </ul>
+            <a href="#" class="vet-logout">
+                <i class="fas fa-sign-out-alt"></i>
+                Cerrar sesión
+            </a>
+        </div>
+        
+        <div class="vet-main-content scroll-sections">
+            <div class="vet-header">
+                <div>
+                    <h1>Bienvenida, Recepcionista</h1>
+                    <p class="text-muted">Martes, 21 de abril de 2025</p>
+                </div>
+            </div>
+            
+            <div class="vet-cards">
+                <div class="vet-card">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h3 class="m-0">Citas del Día</h3>
+                        <div class="vet-card-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <p>Hoy tienes programadas <strong>8 citas</strong>.</p>
+                        <p>Primera cita: <strong>8:30 AM</strong></p>
+                    </div>
+                    <div class="vet-card-footer">
+                        <a href="#" class="vet-btn">Ver lista</a>
+                    </div>
+                </div>
+                
+                <div class="vet-card info">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h3 class="m-0">Nuevos Pacientes</h3>
+                        <div class="vet-card-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <p>Se registraron <strong>2 nuevos pacientes</strong> hoy.</p>
+                        <p>Dueños contactados: <strong>1 pendiente</strong></p>
+                    </div>
+                    <div class="vet-card-footer">
+                        <a href="#" class="vet-btn">Ver registros</a>
+                    </div>
+                </div>
+                
+                <div class="vet-card warning">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h3 class="m-0">Confirmaciones Pendientes</h3>
+                        <div class="vet-card-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <p><strong>3 citas</strong> aún no han sido confirmadas.</p>
+                        <p>Contactar antes de <strong>las 5:00 PM</strong></p>
+                    </div>
+                    <div class="vet-card-footer">
+                        <a href="#" class="vet-btn">Contactar</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
