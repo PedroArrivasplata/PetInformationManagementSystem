@@ -28,6 +28,7 @@ function obtenerUsuarioPorCorreoYClave($correo, $clave) {
     }
 }
 
+
 //Kiara hizo esto
 function registrarNuevoUsuario($dni, $nombres, $apellidos, $correo, $clave, $tipo_usuario_id, $estado_logico_id) {
     $pdo = conectar(); 
@@ -64,6 +65,7 @@ function registrarNuevoUsuario($dni, $nombres, $apellidos, $correo, $clave, $tip
         return ['estado' => 'error', 'mensaje' => 'Error al registrar usuario: ' . $e->getMessage()];
     }
 }
+
 
 
 ?>
