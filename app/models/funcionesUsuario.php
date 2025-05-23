@@ -30,4 +30,6 @@ function obtenerUsuarioPorCorreoYClave($correo, $clave) {
 }
 
 
+
+
 ?>
