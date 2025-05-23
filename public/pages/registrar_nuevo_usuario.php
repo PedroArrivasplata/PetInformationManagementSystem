@@ -1,4 +1,6 @@
 <?php
+require_once '../../app/helpers/tipo_usuario.php'; 
+$tipos_usuario = obtenerTiposDeUsuario();
 $mensaje = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -101,8 +103,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <span class="input-group-text"><i class="bi bi-person-badge-fill"></i></span>
           <select class="form-select" name="tipo_usuario" required>
             <option value="" disabled selected>Selecciona tipo de usuario</option>
-            <option value="1">Veterinario</option>
-            <option value="2">Recepcionista</option>
+            <?php foreach ($tipos_usuario as $tipo): ?>
+              <option value="<?php echo htmlspecialchars($tipo['id_tipo_usuario']); ?>">
+                <?php echo htmlspecialchars($tipo['nombre_usuario']); ?>
+              </option>
+            <?php endforeach; ?>
           </select>
         </div>
 
@@ -121,3 +126,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </div>
 
   <script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

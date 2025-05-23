@@ -66,6 +66,4 @@ function registrarNuevoUsuario($dni, $nombres, $apellidos, $correo, $clave, $tip
     }
 }
 
-
-
 ?>
