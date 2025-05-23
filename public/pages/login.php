@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 header('Location: ../pages/1_inicio.php');
                 exit;
             } else {
-                header('Location: ../usuario/inicio.php');
+                header('Location: ../pages/oficial.php');
                 exit;
             }
         } else {
@@ -105,36 +105,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <input type="password" class="form-control" placeholder="Ingresa tu contraseña" name="password" required />
         </div>
 
-        <!-- Recordarme y enlace de contraseña olvidada -->
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="rememberMe" />
-            <label class="form-check-label" for="rememberMe">Recordarme</label>
-          </div>
-          <a href="#" class="text-decoration-none login-link ms-2">¿Olvidaste tu contraseña?</a>
-        </div>
-
         <!-- Botón de inicio de sesión -->
         <button type="submit" class="btn login-btn w-100 fw-semibold shadow-sm mb-3">Iniciar Sesión</button>
       </form>
+      <p class="text-center">
+        ¿No tienes cuenta? <a href="../pages/registrar_nuevo_usuario.php" class="text-primary">Regístrate aquí</a>
 
-      <!-- Enlace para registrarse -->
-      <div class="text-center mb-2">
-        <span>¿No tienes cuenta?</span>
-        <a href="#" class="text-decoration-none login-link fw-semibold">Regístrate</a>
-      </div>
-
-      <!-- Separador -->
-      <div class="text-center position-relative my-3">
-        <hr class="my-1" />
-        <span class="position-absolute top-50 start-50 translate-middle bg-white px-3">o</span>
-      </div>
-
-      <!-- Botón para continuar con Google -->
-      <button class="btn d-flex align-items-center justify-content-center gap-2 border shadow-sm w-100">
-        <i class="bi bi-google text-danger" style="font-size: 1.6rem;"></i>
-        <span class="fw-semibold text-secondary">Continuar con Google</span>
-      </button>
     </main>
 
     <!-- Imagen derecha (solo en pantallas medianas y grandes) -->
