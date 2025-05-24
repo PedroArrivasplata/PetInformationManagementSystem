@@ -4,44 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical Vice - Agenda</title>
-    <link rel="stylesheet" href="styles_local.css">
+    <link rel="stylesheet" href="../styles_css/styles_local.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/main.min.css' rel='stylesheet' />
-    <style>
-      .vet-dashboard {
-        display: flex;
-        min-height: 100vh;
-      }
-      #calendar {
-        flex-grow: 1;
-        padding: 20px;
-        max-width: 900px;
-        margin: 0 auto;
-      }
-        /* Botones de navegación (prev, next, today) */
-        .fc-button-primary {
-            background-color: #207cca !important;
-            border-color: #207cca !important;
-        }
-        
-        /* Botones de vista (mes, semana, día) */
-        .fc-button-group .fc-button-primary {
-            background-color: #207cca !important;
-            border-color: #207cca !important;
-        }
-        
-        /* Efecto hover */
-        .fc-button-primary:hover {
-            background-color: #1a6bb3 !important;
-            border-color: #1a6bb3 !important;
-        }
-        
-        /* Botón activo (vista seleccionada) */
-        .fc-button-primary:not(:disabled).fc-button-active {
-            background-color: #145a92 !important;
-            border-color: #145a92 !important;
-        }
-    </style>
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/main.min.css' rel='stylesheet'/>
 </head>
 <body>
     <div class="vet-dashboard">
