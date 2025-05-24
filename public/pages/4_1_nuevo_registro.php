@@ -23,7 +23,7 @@
                 <li><a href="5_0_examenes_medicos.php"><i class="fas fa-microscope"></i> Exámenes Médicos</a></li>
                 <li><a href="6_historial_medico.php"><i class="fas fa-file-medical"></i> Historial Médico</a></li>
             </ul>
-            <a href="#" class="vet-logout"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+            <a href="../pages/login.php" class="vet-logout"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
         </div>
 
         <!-- Contenido principal -->
