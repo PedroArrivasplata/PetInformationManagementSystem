@@ -38,12 +38,12 @@
                 <div class="consulta-box">
                     <i class="fas fa-plus-circle"></i>
                     <h2>Nueva cartilla</h2>
-                    <a href="3_1_nueva_cartilla.php">Iniciar Consulta</a>
+                    <a href="3_1_nueva_cartilla.php">Iniciar cartilla</a>
                 </div>
                 <div class="consulta-box">
                     <i class="fas fa-edit"></i>
                     <h2>Editar cartilla anterior</h2>
-                    <a href="3_2_modificar.php">Modificar consulta</a>
+                    <a href="3_2_modificar.php">Modificar cartilla</a>
                 </div>
             </div>
         </div>

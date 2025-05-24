@@ -35,13 +35,13 @@
             <div class="consulta-container">
                 <div class="consulta-box">
                     <i class="fas fa-plus-circle"></i>
-                    <h2>Nuevo examen</h2>
-                    <a href="5_1_nuevo_examen_medico.php">Iniciar</a>
+                    <h2>Nuevo examen médico</h2>
+                    <a href="5_1_nuevo_examen_medico.php">Iniciar examen</a>
                 </div>
                 <div class="consulta-box">
                     <i class="fas fa-edit"></i>
                     <h2>Editar examen médico anterior</h2>
-                    <a href="5_2_modificar.php">Modificar</a>
+                    <a href="5_2_modificar.php">Modificar examen</a>
                 </div>
             </div>
         </div>
