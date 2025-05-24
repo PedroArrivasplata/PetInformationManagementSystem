@@ -35,11 +35,7 @@
                     <h1>Exámenes Médicos</h1>
                     <p class="text-muted">Gestiona los exámenes médicos de tus pacientes</p>
                 </div>
-                <div>
-                    <button class="vet-btn" id="nuevo-examen">
-                        <i class="fas fa-plus"></i> Nuevo Examen
-                    </button>
-                </div>
+
             </div>
             
             <!-- Sección de búsqueda de mascota -->
