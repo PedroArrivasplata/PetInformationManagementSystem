@@ -193,7 +193,7 @@
                                     <a href="#" class="vet-btn-icon" title="Descargar">
                                         <i class="fas fa-download"></i>
                                     </a>
-                                    <a href="#" class="vet-btn-icon" title="Editar">
+                                    <a href="5_1_modificar.php" class="vet-btn-icon" title="Editar">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <a href="#" class="vet-btn-icon" style="color: #e74c3c;" title="Eliminar">
@@ -218,7 +218,7 @@
                                     <a href="#" class="vet-btn-icon" title="Descargar">
                                         <i class="fas fa-download"></i>
                                     </a>
-                                    <a href="#" class="vet-btn-icon" title="Editar">
+                                    <a href="5_1_modificar.php" class="vet-btn-icon" title="Editar">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <a href="#" class="vet-btn-icon" style="color: #e74c3c;" title="Eliminar">
