@@ -32,6 +32,18 @@
             <div class="vet-header">
                 <h1>Exámenes médicos</h1>
             </div>
+            <div class="consulta-container">
+                <div class="consulta-box">
+                    <i class="fas fa-plus-circle"></i>
+                    <h2>Nuevo examen</h2>
+                    <a href="5_1_nuevo_examen_medico.php">Iniciar</a>
+                </div>
+                <div class="consulta-box">
+                    <i class="fas fa-edit"></i>
+                    <h2>Editar examen médico anterior</h2>
+                    <a href="5_2_modificar.php">Modificar</a>
+                </div>
+            </div>
         </div>
     </div>
     </body>
