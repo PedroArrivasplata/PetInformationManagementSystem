@@ -20,7 +20,7 @@
                 <li><a href="2_agenda.html"><i class="fas fa-calendar-alt"></i> Agenda</a></li>
                 <li><a href="3_0_cartilla_vacunacion.html"><i class="fas fa-syringe"></i> Cartilla de Vacunación</a></li>
                 <li><a href="4_0_consulta_medica.html" class="active"><i class="fas fa-stethoscope"></i> Consulta Médica</a></li>
-                <li><a href="5_examenes_medicos.html"><i class="fas fa-microscope"></i> Exámenes Médicos</a></li>
+                <li><a href="5_0_examenes_medicos.php"><i class="fas fa-microscope"></i> Exámenes Médicos</a></li>
                 <li><a href="6_historial_medico.html"><i class="fas fa-file-medical"></i> Historial Médico</a></li>
             </ul>
             <a href="#" class="vet-logout">
