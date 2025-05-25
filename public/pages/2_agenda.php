@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="../styles_css/styles_local.css">
     <link rel="stylesheet" href="../styles_css/iconos.css">
     <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/main.min.css' rel='stylesheet' />
-    <style>
-
-    </style>
 </head>
 <body>
     <div class="vet-dashboard">
