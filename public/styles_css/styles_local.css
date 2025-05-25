@@ -344,26 +344,26 @@ margin: 0 auto;
 }
 /* Botones de navegación (prev, next, today) */
 .fc-button-primary {
-    background-color: #207cca !important;
-    border-color: #207cca !important;
+background-color: #207cca !important;
+border-color: #207cca !important;
 }
 
 /* Botones de vista (mes, semana, día) */
 .fc-button-group .fc-button-primary {
-    background-color: #207cca !important;
-    border-color: #207cca !important;
+background-color: #207cca !important;
+border-color: #207cca !important;
 }
 
 /* Efecto hover */
 .fc-button-primary:hover {
-    background-color: #1a6bb3 !important;
-    border-color: #1a6bb3 !important;
+background-color: #1a6bb3 !important;
+border-color: #1a6bb3 !important;
 }
 
 /* Botón activo (vista seleccionada) */
 .fc-button-primary:not(:disabled).fc-button-active {
-    background-color: #145a92 !important;
-    border-color: #145a92 !important;
+background-color: #145a92 !important;
+border-color: #145a92 !important;
 }
 /* Cartilla de vacunacion*/
 /* Estilos específicos para la cartilla de vacunación */
