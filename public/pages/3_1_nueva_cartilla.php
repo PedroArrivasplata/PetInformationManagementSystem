@@ -15,7 +15,7 @@
                 <h3>Medical Vice</h3>
                 <p>Panel Veterinario</p>
             </div>
-                        <ul class="vet-sidebar-nav">
+              <ul class="vet-sidebar-nav">
                 <li><a href="1_inicio.php"><i class="fas fa-home"></i> Inicio</a></li>
                 <li><a href="2_agenda.php"><i class="fas fa-calendar-alt"></i> Agenda</a></li>
                 <li><a href="3_0_cartilla_vacunacion.php" class="active"><i class="fas fa-syringe"></i> Cartilla de Vacunación</a></li>
@@ -24,7 +24,7 @@
                 <li><a href="6_historial_medico.php"><i class="fas fa-file-medical"></i> Historial Médico</a></li>
             </ul>
             <a href="../pages/login.php" class="vet-logout"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
-        </div>
+      </div>
   <div class="dividir-pantalla">
     <!-- Sección izquierda: Buscar por DNI -->
     <div class="vet-search-section">
