@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical Vice - Panel Veterinario</title>
     <link rel="stylesheet" href="../styles_css/styles_local.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../styles_css/iconos.css">
 </head>
 <body>
     <div class="vet-dashboard">
@@ -20,7 +20,7 @@
                 <li><a href="2_agenda.php"><i class="fas fa-calendar-alt"></i> Agenda</a></li>
                 <li><a href="3_0_cartilla_vacunacion.php"><i class="fas fa-syringe"></i> Cartilla de Vacunación</a></li>
                 <li><a href="4_0_consulta_medica.php"><i class="fas fa-stethoscope"></i> Consulta Médica</a></li>
-                <li><a href="5_examenes_medicos.php"><i class="fas fa-microscope"></i> Exámenes Médicos</a></li>
+                <li><a href="5_0_examenes_medicos.php"><i class="fas fa-microscope"></i> Exámenes Médicos</a></li>
                 <li><a href="6_historial_medico.php"><i class="fas fa-file-medical"></i> Historial Médico</a></li>
             </ul>
             <a href="../pages/login.php" class="vet-logout">
